@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let productlist=[
+            {
+                pname: "i phone",
+                price: 85000,
+            },
+            {
+                pname:"oneplus 12",
+                price: 70000,
+            },
+            {
+                pname:"samsung s23",
+                price: 90000,
+            },
+        ]
+
+        let newproductlist2 = productlist.reduce((acc,product) => acc+product.price,0)
+    
+        
+        console.log(newproductlist2);
+    </script>
+    
+</body>
+</html>
