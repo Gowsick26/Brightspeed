@@ -1,0 +1,17 @@
+<div>
+    <input type="text" id="inputBox" placeholder="Type here">
+    <button onclick="displayValue()">Submit</button>
+</div>
+<div>
+    <p id="output"></p>
+</div>
+
+<script>
+    function displayValue() {
+        let inputElement = document.getElementById('inputBox');
+        let outputElement = document.getElementById('output');
+        
+        let value = inputElement.value;
+        outputElement.innerText = "Filled Value: " + value;
+    }
+</script>

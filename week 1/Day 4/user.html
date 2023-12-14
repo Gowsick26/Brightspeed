@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label for="name"> Username :</label>
+        <input type="text" name="username" placeholder="enter name" id="name">
+        <br>
+        <br>
+        <label for="pass">password :</label>
+        <input type="password" name="password" id="pass">
+        <br>
+        <br>
+        <input type="submit" value="click" onclick="user()">
+    </form>
+    
+
+<script>
+    let name =document.getElementById("name");
+    let pass =document.getElementById("pass")
+    function user(){
+        event.preventDefault();
+        console.log(name.value);
+        console.log(pass.value);
+        
+
+        
+    }
+     
+</script>
+
+
+
+
+    
+</body>
+</html>

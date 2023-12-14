@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id ="b">heloo</p>
+     <button onclick= "chc()">click here</button>
+
+
+
+    <script>
+    let p = document.getElementById('b');
+let but = document.getElementsByTagName('button');
+function chc(){
+    p.style.color="green";
+}
+but[1].addEventListener('click',chc);
+    </script>
+    
+</body>
+</html>

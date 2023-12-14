@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="a">
+
+   </div>
+   <button onclick="nam()">click</button>
+
+
+
+
+
+
+
+    <script>
+
+        let arr=[
+            {
+                name:"gowsick",
+                city:"salem",
+                age:22
+            },
+            {
+                name:"karthik",
+                city:"salem",
+                age:24
+            },
+            {
+                name:"mugundan",
+                city:"salem",
+                age:22
+            },
+            
+        ]
+
+        let dis = document.getElementById('a');
+        function nam(){
+            
+            for(let i=0;i<arr.length;i++){
+                let h =document.createElement("h1");
+                h.innerHTML=arr[i].name;
+                dis.appendChild(h);
+                
+            }
+        
+        }
+      
+    
+     
+
+    </script>
+    
+</body>
+</html>
