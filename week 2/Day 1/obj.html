@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="b">
+
+    <p ng-controller="ctrl">
+        {{pro.name}}<br>
+        {{pro.year}}<br>
+        {{pro.price}}
+    </p>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let obj=angular.module("b",[])
+        obj.controller("ctrl",function($scope){
+            $scope.pro={
+                name:"oneplus 12",
+                year:2024,
+                price:70000
+
+            }
+            
+        })
+    </script>
+</body>
+</html>

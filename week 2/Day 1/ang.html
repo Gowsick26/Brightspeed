@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="p">
+    
+    <div ng-controller="crtl">
+    <ul>
+        <li ng-repeat="item in obj">
+            {{$item}}{{item}}
+        </li>
+    </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="ang.js"></script>
+</body>
+</html>

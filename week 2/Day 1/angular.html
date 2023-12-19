@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="demo">
+    
+
+    <p>Addtion : {{3+2}}</p>
+    <p>Subtraction : {{3-2}}</p>
+    <p>Multiplication : {{3*2}}</p>
+    <p>Divison : {{3/2}}</p>
+    <p>Modulo : {{3%2}}</p>
+
+<!-- <div ng-controller ="userController as user">
+    {{user.name}};
+    {{user.age}}
+
+</div> -->
+
+    <!-- using controller-->
+    <div ng-controller="proctrl as product">
+        {{product.sum}};
+    
+    </div>
+
+    <!--using scopes-->
+    <div ng-controller="userctrl">
+        {{name}}<br>
+        {{subt}}
+    </div>
+   
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script>
+    //    var app= angular.module("demo",[]);
+    //    app.controller("userController",function(){
+    //     this.name="gowsick";
+    //     this.age=22
+    //    })
+
+
+    // using controller
+       var pro = angular.module("demo",[]);
+       pro.controller("proctrl",function(){
+        this.name="oneplus 12";
+        this.price=60000;
+
+        var a =10;
+        var b=20;
+     
+       this.sum=a+b;
+       this.add=function(){
+        return a+b;
+       }
+       })
+    
+   // using scopes
+       pro.controller("userctrl",function($scope){
+        $scope.name="gowsick"
+
+        let a=200;
+        let b=100;
+         $scope.subt=a-b;
+         $scope.sub=function(){
+            return a-b;
+         }
+       })
+     
+       
+
+
+    </script>
+</body>
+</html>

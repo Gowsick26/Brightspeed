@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="c">
+
+    <p ng-controller="ctrl">
+        {{add(a,b)}}<br>
+        {{sub(a,b)}}<br>
+        {{mul(a,b)}}
+    </p>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let fun=angular.module("c",[]);
+        fun.controller("ctrl",function($scope){
+           $scope.a=3;
+           $scope.b=2;
+        //    $scope.add = a+b;
+        //    $scope.sub =a-b;
+        //    $scope.mul =a*b;
+           $scope.add=function(a,b){
+            return a+b;
+           }
+           $scope.sub=function(a,b){
+            return a-b;
+           }
+           $scope.mul=function(a,b){
+            return a*b;
+           }
+
+
+        })
+    </script>
+</body>
+</html>
