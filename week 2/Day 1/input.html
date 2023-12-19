@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="g">
+    <div ng-controller="ctr">
+        <input type="text" ng-model="inputvalue"> <br>
+        <button ng-click="save()">click here</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let box = angular.module("g",[])
+        box.controller("ctr",function($scope){
+
+              $scope.save= function(){
+                console.log($scope.inputvalue);
+
+              }
+        })
+        
+    </script>
+</body>
+</html>
