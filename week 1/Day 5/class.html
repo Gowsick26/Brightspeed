@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d3" style="padding: 10%; border: 2px solid; background-color: green;">
+        <div id="d2"style="padding: 10%; border:2px solid; background-color: yellow;">
+            <div id="d1" style="padding:10%; border:2px solid;background-color: red;">
+                
+            </div>
+        
+        </div></div>
+  
+  
+    <script>
+        // class person{
+        //     constructor(name,age){
+        //         this.name=name;
+        //         this.age=age;
+        //     }
+        //     details(){
+        //         console.log(this.name);
+        //         console.log(this.age);
+        //     }         
+        // }
+        // let p1 =new person("gowsick",22);
+        // p1.details();
+
+    //******************************************************
+
+        // event propagation (or) bubbling:
+        //  let d3= document.getElementById("d3");
+        //  let d2=document.getElementById("d2");
+        //  let d1=document.getElementById("d1");
+
+
+        //   function d1clicked(){
+        //     console.log("d1 clicked");
+        //     //event.stopPropagation(); /// to stop the propagation 
+        //   }
+          
+        //   function d2clicked(){
+        //     console.log("d2 clicked");
+        //   }
+
+        //   function d3clicked(){
+        //     console.log("d3 clicked");
+        //   }
+
+
+        //   d1.addEventListener('click',d1clicked);
+        //   d2.addEventListener('click',d2clicked);
+        //   d3.addEventListener('click',d3clicked);
+
+
+   // ******************************************************************
+
+          // event bubbling:
+
+          let d3= document.getElementById("d3");
+         let d2=document.getElementById("d2");
+         let d1=document.getElementById("d1");
+
+
+          function d1clicked(){
+            console.log("d1 clicked");
+            //event.stopPropagation(); /// to stop the propagation 
+          }
+          
+          function d2clicked(){
+            console.log("d2 clicked");
+          }
+
+          function d3clicked(){
+            console.log("d3 clicked");
+          }
+
+
+          d1.addEventListener('click',d1clicked,true);
+          d2.addEventListener('click',d2clicked,true);
+          d3.addEventListener('click',d3clicked,true);
+
+
+
+
+    </script>
+</body>
+</html>

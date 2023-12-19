@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form >
+        Username : <input type="text"  id="uname"><br>
+       Password :  <input type="text" id="pass"><br>
+       <button onclick="login()">Login</button>
+    </form>
+
+    <script>
+        function login() {
+            
+            let uname = document.getElementById("uname").value;
+            let pass = document.getElementById("pass").value;
+
+            console.log(uname,pass);
+        }
+    </script>
+</body>
+</html>

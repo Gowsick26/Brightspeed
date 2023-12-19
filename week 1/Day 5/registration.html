@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: rgb(0, 0, 0);
+        }
+
+        .register-container {
+            background-color: bisque;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            margin: auto;
+        }
+
+        .register-container form {
+            display: flex;
+            flex-direction: column;
+        
+        
+        }
+
+        .register-container form label,
+        .register-container form input,
+        .register-container form select,
+        .register-container form button,
+        .register-container form a {
+            margin-bottom: 10px;
+        }
+        #signup{
+            margin-top: 10px;
+            padding-left: 110px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 id="head" style="color: aliceblue;">s</h1>  -->
+    <div class="register-container">
+        <h1 >Register Form</h1>
+        <form id="form" method="post">
+            <label for="uname">Username :</label>
+            <input type="text" placeholder="Enter name" id="uname" name="uname">
+
+            <label for="email">Email :</label>
+            <input type="text" placeholder="Enter email" id="email" name="email">
+
+            <label for="upass">Password :</label>
+            <input type="password" id="upass" name="upass">
+
+            <label for="loc">Location :</label>
+            <select id="loc" name="loc">
+                <option value="Tamilnadu">Tamilnadu</option>
+                <option value="Kerala">Kerala</option>
+            </select>
+         <div id="signup">
+            <button onclick="sign()">Sign Up</button>
+         </div>
+            
+        </form>
+        <br>
+        <form> 
+            If you have an account already 
+            <a href="signin.html">Sign In</a>
+        </form>
+    </div>
+    
+
+    <script>
+     let form=document.querySelectorAll("#form");
+     let body = document.getElementsByClassName("register-container");
+     let head = document.getElementById("head");
+     
+     function sign(){
+        event.preventDefault();
+        let uname = document.getElementById("uname").value;
+        let email =document.getElementById("email").value;
+        let pass = document.getElementById("upass").value;
+        let loc = document.getElementById("loc").value;
+        fetch("http://localhost:3000/userdata",{
+            method:"POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({uname,email,pass,loc})
+            
+        }).then(response =>{
+            if(response.ok){
+                alert("Registration Successful");
+            }else{
+                throw new Error("Registration failed");
+            }
+        })
+        .then(data =>{
+ 
+            window.location.href ="http://127.0.0.1:5500/Day%205/signin.html";
+
+        })
+        .catch()
+     }
+    //  alert("Registration successful")
+    </script>
+</body>
+</html>

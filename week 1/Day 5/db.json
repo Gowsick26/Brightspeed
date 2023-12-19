@@ -1,0 +1,81 @@
+{
+  "userdata": [
+    {
+      "id": 1,
+      "uname": "",
+      "email": "",
+      "pass": "",
+      "loc": ""
+    },
+    {
+      "uname": "abc",
+      "email": "2k19cse026@kiot.ac.in",
+      "pass": "123",
+      "loc": "Kerala",
+      "id": 2
+    },
+    {
+      "uname": "gowsick",
+      "email": "2k19cse026@kiot.ac.in",
+      "pass": "123456",
+      "loc": "Kerala",
+      "id": 3
+    },
+    {
+      "uname": "abc",
+      "email": "abc@gmail.com",
+      "pass": "145",
+      "loc": "Tamilnadu",
+      "id": 4
+    },
+    {
+      "uname": "gowsick",
+      "email": "2k19cse026@kiot.ac.in",
+      "pass": "123",
+      "loc": "Tamilnadu",
+      "id": 5
+    },
+    {
+      "uname": "gopi",
+      "email": "abc@gmail.com",
+      "pass": "456",
+      "loc": "Tamilnadu",
+      "id": 6
+    },
+    {
+      "uname": "gopi",
+      "email": "abc@gmail.com",
+      "pass": "123",
+      "loc": "Tamilnadu",
+      "id": 7
+    },
+    {
+      "uname": "gopi",
+      "email": "2k19cse026@kiot.ac.in",
+      "pass": "liog",
+      "loc": "Tamilnadu",
+      "id": 8
+    },
+    {
+      "uname": "as",
+      "email": "sad",
+      "pass": "sad",
+      "loc": "Tamilnadu",
+      "id": 9
+    },
+    {
+      "uname": "df",
+      "email": "sdf",
+      "pass": "fd",
+      "loc": "Tamilnadu",
+      "id": 10
+    },
+    {
+      "uname": "pain",
+      "email": "pain@gmail.com",
+      "pass": "pain123",
+      "loc": "Tamilnadu",
+      "id": 11
+    }
+  ]
+}

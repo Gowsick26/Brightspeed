@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .signin-container {
+            background-color: rgb(214, 214, 190);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: rgb(0, 0, 0); 
+            width: 300px;
+            margin: auto;
+        }
+
+        .signin-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            
+        }
+
+        #submit {
+            margin-top: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <h1 style="color: rgb(7, 7, 7);">Sign in</h1>
+
+        <form  >
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"><br>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"><br>
+            
+            <button onclick="login()">sign in</button>
+           
+        </form>
+        <br>
+        <form>
+           If you don't have an account, <a href="registration.html">sign up</a>
+        </form>
+    </div>
+
+
+    <script>
+        let validate = true;
+        function login(){
+            event.preventDefault();
+            let uname = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            localStorage.setItem("username",uname);
+            localStorage.setItem("password",pass);
+            
+            console.log(username,password);
+            let validate= false;
+            fetch( "http://localhost:3000/userdata")
+            .then(res=>res.json())
+            .then(userdata=>{
+                for(const i of userdata){
+                    if((i.uname === uname)&& i.pass===pass){
+                        alert("Login successfull");
+                        validate = true;
+                        window.location.href = "http://127.0.0.1:5500/Day%205/demo.html";
+                        break;
+                    }
+                }
+                if(!validate){
+                    alert("sorry login failed Invalid username or password");
+                    window.location.reload();
+                }
+               
+            })
+            .catch(error => console.log(error));
+
+
+
+
+
+
+            
+            
+        }
+    </script>
+</body>
+</html>
