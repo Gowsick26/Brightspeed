@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+
+
+    <div ng-controller="crt">
+        <table border="2" cellspacing="2">
+            <tr>
+                <th>NAME</th>
+                <th>STATE</th>
+            </tr>
+            <tr ng-repeat="data in obj">
+                <td>{{data.name}}</td>
+                <td>{{data.state}}</td>
+                
+            </tr>
+        </table>
+        
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let app = angular.module("app",[])
+        app.controller("crt",function($scope){
+          $scope.obj=[
+            {
+                name:"gowsick",
+                state:"Kerala"
+            },
+            {
+                name:"karthik",
+                state:"Tamilnadu"
+            },
+            {
+                name:"mugundan",
+                state:"karnataka"
+            }
+          ]
+
+        })
+    </script>
+</body>
+</html>

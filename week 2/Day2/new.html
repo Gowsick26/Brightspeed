@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+
+
+   <h1 ng-controller="sort">
+    <button ng-show="loggedin">login</button>
+    <h2>{{name}}</h2>
+   </h1> 
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+         let app = angular.module("app",[])
+         app.controller("sort",["$sort",function($scope){
+             $scope.loggedin=true;
+             $scope.name="angel"
+
+             
+         }])
+    //   var x=[
+    //     {"number":3,"value":"test"},
+    //     {"number":1,"value":"test"},
+    //     {"number":2,"value":"test"}
+    // ];
+    //  var y= x.slice().sort(function (a,b){
+    //     return a.number - b.number;
+
+    //  })
+    //  console.log(y);
+ 
+
+
+    // let a=[1,5,4,3,2];
+    // let b= a.slice().sort(function(a,b){
+    //     return a-b;
+    // })
+    // console.log(b);
+
+
+    </script>
+  
+</body>
+</html>

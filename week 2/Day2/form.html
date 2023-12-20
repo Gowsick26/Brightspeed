@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+    <!-- registration-->
+    <div ng-controller="crt">
+        <button  ng-click="toggle()">toggle</button>
+        <div ng-if="check">
+            
+            <h1 >Register Form</h1>
+            <form>
+                <label for="uname">Username :</label>
+                <input type="text" placeholder="Enter name" ng-model="uname"> <br><br>
+    
+                <label for="email">Email :</label>
+                <input type="text" placeholder="Enter email" ng-model="uemail"> <br><br>
+    
+                <label for="upass">Password :</label>
+                <input type="password" ng-model="upass"><br><br>
+    
+                <label for="loc">Location :</label>
+                <select ng-model="location">
+                    <option value="Tamilnadu">Tamilnadu</option>
+                    <option value="Kerala">Kerala</option>
+                </select> <br><br>
+                <button ng-click="signup()">SignUp</button>
+            </div>
+            <br><br>
+             
+               
+            
+                <!-- <button  ng-show="signin" ng-click="hidesignup()"> clear signin</button> -->
+                
+            
+            <!--signin-->
+            <div ng-if="checks" >
+                <h1 style="color: rgb(7, 7, 7);">Sign in</h1>
+        
+                <form  >
+                    <label for="username">Username</label>
+                    <input type="text" ng-model="uname"><br><br>
+        
+                    <label for="password">Password</label>
+                    <input type="password" ng-model="upass"><br><br>
+                    
+                    <button  ng-click="signin()">signin</button>
+                   
+                </form>
+           </div>
+
+   
+    
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script>
+            var arr=[]
+            let app = angular.module("app",[])
+            app.controller("crt",function($scope){
+                $scope.check =true;
+        
+
+                $scope.toggle=function(){
+                    if($scope.check== true){
+                        $scope.check = false;
+                        $scope.checks=true;
+                    }
+                    else{
+                        $scope.check=true;
+                        $scope.checks=false;
+                    }
+                }
+
+             
+
+                $scope.signup=function(){
+                    $scope.obj={
+                        username: $scope.uname,
+                        email:$scope.uemail,
+                        password:$scope.upass,
+                        location:$scope.location
+                    }
+                    arr.push($scope.obj)
+                    console.log(arr);
+                }
+                
+
+
+
+                $scope.signin=function(){
+                     $scope.loginusername=$scope.uname;
+                     $scope.loginpassword=$scope.upass;
+                     for(i of arr){
+                        console.log(i);
+                        if($scope.uname==i.username && $scope.upass==i.password){
+                            console.log("login successfull");
+                        }
+                     }
+                }
+
+            })
+        </script>
+</body>
+</html>

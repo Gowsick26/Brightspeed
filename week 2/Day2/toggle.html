@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+
+     <div ng-controller="crt">
+        <!-- <button ng-click="toggle()">toggle</button> -->
+        <button  ng-click="hidesignup()" ng-show="login">login</button>
+        <button  ng-click="hidelogin()"ng-show="signup">signup</button>
+     </div>
+     
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let app = angular.module("app",[])
+        app.controller("crt",function($scope){
+
+           $scope.login=true;
+           $scope.signup=true;
+
+           $scope.hidesignup=function(){
+             if($scope.signup==true){
+                $scope.signup = false
+             }
+             else{
+                $scope.signup = true
+             }
+              
+           }
+           $scope.hidelogin=function(){
+            if( $scope.login==true){
+                $scope.login=false
+            }
+            else{
+                $scope.login=true
+            }
+           }
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  ng-app="app">
+
+
+    <div ng-controller="crt">
+        Name: <input type="text" ng-model="inputvalue"> <br><br>
+       Password: <input type="password" ng-model="inputpassword"> <br><br>
+        <button ng-click="store()">submit</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let app =angular.module("app",[])
+        app.controller("crt",function($scope){
+
+            $scope.data={ }
+            $scope.inputvalue="";
+            $scope.inputpassword="";
+            $scope.store=function(){
+                $scope.data.name=$scope.inputvalue;
+                $scope.data.password=$scope.inputpassword;
+                console.log($scope.data);
+               
+
+            }
+           
+        })
+    </script>
+</body>
+</html>
