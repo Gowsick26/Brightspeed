@@ -9,7 +9,7 @@
     <!-- registration-->
     <div ng-controller="crt">
         <button  ng-click="toggle()">toggle</button>
-        <div ng-if="check">
+        <div ng-show="check">
             
             <h1 >Register Form</h1>
             <form>
@@ -28,7 +28,10 @@
                     <option value="Kerala">Kerala</option>
                 </select> <br><br>
                 <button ng-click="signup()">SignUp</button>
-            </div>
+        </div>
+            
+            
+            
             <br><br>
              
                
@@ -37,15 +40,15 @@
                 
             
             <!--signin-->
-            <div ng-if="checks" >
+            <div ng-show="checks" >
                 <h1 style="color: rgb(7, 7, 7);">Sign in</h1>
         
                 <form  >
                     <label for="username">Username</label>
-                    <input type="text" ng-model="uname"><br><br>
+                    <input type="text" ng-model="unames"><br><br>
         
                     <label for="password">Password</label>
-                    <input type="password" ng-model="upass"><br><br>
+                    <input type="password" ng-model="upasss"><br><br>
                     
                     <button  ng-click="signin()">signin</button>
                    
@@ -60,7 +63,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script>
-            var arr=[]
+            var arr=[];
             let app = angular.module("app",[])
             app.controller("crt",function($scope){
                 $scope.check =true;
@@ -86,6 +89,7 @@
                         password:$scope.upass,
                         location:$scope.location
                     }
+                    console.log($scope.obj);
                     arr.push($scope.obj)
                     console.log(arr);
                 }
@@ -94,14 +98,19 @@
 
 
                 $scope.signin=function(){
-                     $scope.loginusername=$scope.uname;
-                     $scope.loginpassword=$scope.upass;
+                    var state = true;
                      for(i of arr){
                         console.log(i);
-                        if($scope.uname==i.username && $scope.upass==i.password){
+                        // console.log($scope.unames);
+                        if(($scope.unames==i.username) && ($scope.upasss==i.password)){
                             console.log("login successfull");
+                            state=false;
                         }
                      }
+                     if(state){
+                            console.log("login failed");
+                        }
+                     
                 }
 
             })
