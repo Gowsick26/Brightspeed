@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+
+
+    <div ng-controller="crt">
+        <ul>
+            <li ng-repeat="item in arr" ng-click="delete(item)">
+                <p>{{item}}</p>
+            </li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let app=angular.module("app",[])
+        app.controller("crt",function($scope){
+             $scope.arr=["gowsick","karthik","mugundan"];
+             console.log($scope.arr);
+
+             $scope.delete=function(item){
+                let i= $scope.arr.indexOf(item);
+                console.log(i);
+                if(i !==-1){
+                    $scope.arr.splice(i,1);
+                }
+             }
+
+        })
+    </script>
+</body>
+</html>
