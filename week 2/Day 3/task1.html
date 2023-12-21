@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+
+
+    <div ng-controller="crt">
+        <table border="1" width="100%">
+            <tr>
+                <th ng-click="orderby('song')">SONG NAME</th>
+                <th ng-click="orderby('movie')">MOVIE</th>
+                <th ng-click="orderby('Language')">LANGUAGE</th>
+            </tr>
+            <tr ng-repeat="items in music|orderBy : myorder" >
+                <td>{{items.song}}</td>
+                <td>{{items.movie}}</td>
+                <td>{{items.Language}}</td>
+                
+            </tr>
+        </table>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let app = angular.module("app",[])
+        app.controller("crt",function($scope){
+            $scope.music=[
+                {
+                    song:"Badass",
+                    movie:"Leo",
+                    Language:"Tamil"
+                },
+                {
+                    song:"Toofan",
+                    movie:"KGF",
+                    Language:"Kannada"
+                },
+                {
+                    song:"Malare",
+                    movie:"Premam",
+                    Language:"Malayalam"
+                },
+                {
+                    song:"New york nagaram",
+                    movie:"Sillunu oru kadhal",
+                    Language:"Tamil"
+                },
+                {
+                    song:"Mehabooba",
+                    movie:"KGF",
+                    Language:"kannada"
+                },
+                {
+                    song:"Darshana",
+                    movie:"Hridhayam",
+                    Language:"Malayalam"
+                },
+
+            ];
+            $scope.orderby=function(item){
+                $scope.myorder=item;
+            }
+        })
+    </script>
+</body>
+</html>

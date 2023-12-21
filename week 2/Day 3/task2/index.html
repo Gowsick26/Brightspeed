@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+      <div ng-controller="crt1">
+        <input type="text" ng-model="inputvalue">
+        <button ng-click="sendata()">send</button>
+
+      </div>
+
+     <div ng-controller="crt2">
+        <button ng-click="showdata()">show</button>
+            <p ng-repeat=" i in response">
+                {{i.name}}
+            
+          </p>
+
+
+     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="index.js"></script>
+    <script src="services.js"></script>
+    <script src="post.js"></script>
+    <script src="show.js"></script>
+</body>
+</html>

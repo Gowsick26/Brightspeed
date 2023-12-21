@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+       
+
+    <div ng-controller="crt">
+        <!--filter uppercase-->
+        <p>{{name|uppercase}}</p>
+
+
+        <!--filter lowercase-->
+        <p>{{text|lowercase}}</p>
+
+
+        <!--orderBy-->
+        <ul>
+            <li ng-repeat="i in arr | orderBy:'state'">
+                <p>{{i.name +", "+ i.state}}</p>
+            </li>
+        </ul>
+
+
+        <!--currency filter-->
+        <p>{{value | currency }}</p>
+
+
+
+        <!--filter filter-->
+        <ul>
+            <li ng-repeat="items in gift | filter : 'e' ">
+                <p>{{items}}</p>
+            </li>
+        </ul>
+
+
+
+        <!--filter by array based on user input-->
+         <input type="text" ng-model="test">
+
+         <ul>
+            <li ng-repeat="item in phones | filter:test">{{item.name}}</li>
+         </ul>
+
+
+         <!--filter by user input using ng-click -->
+         <table border="1" width="100%">
+            <tr>
+                <th ng-click="orderBy('name')">Name</th>
+                <th ng-click="orderBy('state')">State</th>
+            </tr>
+            <tr ng-repeat="item in names|orderBy: myorder">
+                <td>{{item.name}}</td>
+                <td>{{item.state}}</td>
+            </tr>
+         </table>
+
+
+         <!--date filter-->
+
+         <p>date={{today|date}}</p>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        let app=angular.module("app",[])
+        app.controller("crt",function($scope){
+
+            $scope.name="abcd";
+            $scope.text="HELLO";
+
+            $scope.arr=[
+                {
+                    name:"gowsick",
+                    state:"kerala"
+                },
+                {
+                    name:"karthik",
+                    state:"Tamilnadu"
+                }
+            ]
+
+
+            $scope.value=25000;
+
+
+            $scope.gift=[
+                'phone',
+                'TV',
+                'car',
+                'bike',
+                'playstation'
+            ];
+           
+
+            $scope.phones=[{
+                name:"i phone 15 pro max",
+                price:150000,
+            },
+            {
+                name:"oneplus 12",
+                price:65000,
+            },
+            {
+                name:"iqoo 12 pro",
+                price:60000,
+            }
+            ]
+
+        
+
+
+            $scope.names=[
+                {
+                    name:"gowsick",
+                    state:"kerala"
+                },
+                {
+                    name:"karthik",
+                    state:"Tamilnadu"
+                },
+                {
+                    name:"mudundaan",
+                    state:"karnataka"
+                },
+                {
+                    name:"deebak",
+                    state:"Himachal pradesh"
+                },
+                {
+                    name:"gopi",
+                    state:"maharastra"
+                }
+            ];
+            $scope.orderBy = function(item){
+                $scope.myorder =item;
+            }
+
+
+            $scope.today = new date();
+
+        })
+        </script>
+</body>
+</html>
